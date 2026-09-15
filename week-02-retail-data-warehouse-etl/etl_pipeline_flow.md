@@ -36,12 +36,12 @@ This document details the end-to-end Extract, Transform, Load (ETL) pipeline fee
               +---------------------------------------------------------+
 ```
 ## 3. Step-by-Step ETL Execution Stages
-**Stage 1: Extraction (E)
+# Stage 1: Extraction (E)
 Ingestion Strategy: Automated delta extraction utilizing Change Data Capture (CDC) via database transaction logs, supplemented by daily midnight batch extract snapshots.
 
 Sources Handled: Relational transaction databases across regions (APAC, EMEA, Americas) and edge inventory point-of-sale systems.
 
-**Stage 2: Transformation (T)
+ # Stage 2: Transformation (T) 
 Data Hygiene & Cleansing:
 
 Automated removal of duplicate transaction IDs.
@@ -62,7 +62,7 @@ Data Privacy & Governance:
 
 Full cryptographic one-way hashing (SHA-256) applied on customer emails and phone numbers to satisfy cross-border GDPR compliance.
 
-**Stage 3: Loading (L)
+# Stage 3: Loading (L)
 Target Load Pattern: Micro-batch staging table upserts into the production Star Schema.
 
 Integrity Checks: Foreign key constraints validated against active surrogate dimension records prior to final commit into Fact_Retail_Sales.
